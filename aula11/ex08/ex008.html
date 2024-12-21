@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+</head>
+<body>
+    <h1>Radar ( limite 60km/h )</h1>
+    Digite a sua velocidade 
+    <input type="number" name="txtn1" id="txtn1"> Km/h
+    <button onclick="clicar()">Verificar</button>
+    <br>
+    <span id="res1"></span>
+    <span id="res2"></span>
+
+    <script>
+        function clicar(){
+            var txtn1 = document.getElementById('txtn1')
+            var vel = Number(txtn1.value)
+            var res1 = document.getElementById('res1')
+            var res2 = document.getElementById('res2')
+            
+            res1.innerHTML = (`A velocidade do seu carro é de ${vel} km/h <br>`);
+
+            if(vel<=60){
+                res2.innerHTML = (`Diriga sempre com cinto de segurança <br>`);
+            } else{
+                res2.innerHTML = 'Voce está <strong>MULTADO</strong> por excesso de velociadade';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif , serif;
+        }
+
+        h1 {
+            text-shadow: 0px 0px 3px white;
+            margin-top: 20px;
+            padding: 5px;
+        }
+        p{
+            /*text-shadow: 0px 0px 1px white;*/
+            padding: 10px;
+            font-size: 35px;
+        }
+        .fundo{
+            background-image: linear-gradient(45deg, black, aquamarine);     
+            height: 100vh;
+            color: white;
+            font: normal 20pt Arial;
+            text-align: center;
+        }
+        .div2{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.432);
+            height: 500px;
+            width: 500px;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        span>input{
+            width: 200px;
+            height: 40px;
+            font-size: 18px;
+            padding: 4px;
+            border-radius: 2px;
+            border: none;
+
+        }
+        button{
+            font-size: 18px;
+            height: 48px;
+            padding: 5px;
+            border: none;
+            border-radius: 1px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="fundo">
+        <div class="div2">
+            <h1>Seu país</h1>
+            <p>Escreva o país em que você nasceu</p>
+            <span>
+
+                <input type="text" name="pais" id="pais">
+
+                <button id="verificar" onclick="clicar()">Verificar</button>
+
+            </span>
+            <p id="res">...</p>
+            <p id="res2">....</p>
+        </div>
+    </div>
+    <script>
+        function clicar(){
+
+            var pais = (document.getElementById('pais'))
+            var nomepais = String(pais.value)
+
+            var res = document.getElementById('res')
+            var res2 = document.getElementById('res2')
+
+            res.innerHTML = `Você nasceu em ${nomepais}`
+
+            if(nomepais == 'Brasil'){
+                res2.innerHTML = 'Você é <strong>Brasileiro</strong> ! ';
+            } else {
+                res2.innerHTML = 'Você é estrangeiro ou  escreveu "brasil" sem letra maiúscula  ';
+            }
+        }
+    </script>
+</body>
+</html>
